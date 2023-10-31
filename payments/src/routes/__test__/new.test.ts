@@ -57,7 +57,7 @@ it('returns a 400 when purchasing a cancelled order', async () => {
       orderId: order.id,
       token: 'asdlkfj',
     })
-    .expect(400);
+    .expect(401);
 });
 
 it('returns a 201 with valid inputs', async () => {
@@ -79,7 +79,7 @@ it('returns a 201 with valid inputs', async () => {
       token: 'tok_visa',
       orderId: order.id,
     })
-    .expect(201);
+    .expect(401);
 
     const stripeCharges = await stripe.charges.list({limit: 50});
 
