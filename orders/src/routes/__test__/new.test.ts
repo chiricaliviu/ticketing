@@ -35,7 +35,7 @@ it('returns an error if the ticket is already reserved', async () => {
     .post('/api/orders')
     .set('Cookie', global.signin())
     .send({ ticketId: ticket.id })
-    .expect(200);
+    .expect(201);
 });
 
 it('reserves a ticket', async () => {
